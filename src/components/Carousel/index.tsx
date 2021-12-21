@@ -1,14 +1,12 @@
 import React, { ReactChild, useEffect, useRef, useState } from "react";
 
-type GoForward = () => void;
-type GoBack = () => void;
+import { FIRST_INDEX } from "./constants";
+import { GoBack, GoForward } from "./types";
 
 type Props = {
   delay: number;
   children: ReactChild[];
 };
-
-const FIRST_INDEX = 0;
 
 export const Carousel: React.FC<Props> = ({ children, delay }): JSX.Element | null => {
   const [activeItemIndex, setActiveItemIndex] = useState<number>(0);
