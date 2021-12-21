@@ -3,6 +3,8 @@ import React, { ReactChild, useEffect, useRef, useState } from "react";
 import { FIRST_INDEX } from "./constants";
 import { GoBack, GoForward } from "./types";
 
+import styles from "./styles.module.scss";
+
 type Props = {
   delay: number;
   children: ReactChild[];
@@ -53,10 +55,12 @@ export const Carousel: React.FC<Props> = ({ children, delay }): JSX.Element | nu
   if (!children) return null;
 
   return (
-    <div>
+    <div className={styles.Container}>
       {children[activeItemIndex]}
-      <button onClick={() => goBack()}>Prev</button>
-      <button onClick={() => goForward()}>Next</button>
+      <div>
+        <button onClick={() => goBack()}>Prev</button>
+        <button onClick={() => goForward()}>Next</button>
+      </div>
     </div>
   );
 };
