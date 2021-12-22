@@ -56,7 +56,7 @@ export const Carousel: React.FC<Props> = ({ children, delay }): JSX.Element | nu
 
   return (
     <div className={styles.Container}>
-      {children[activeItemIndex]}
+      <div data-testid="carouselActiveItem">{children[activeItemIndex]}</div>
       <div>
         <button onClick={() => goBack()}>Prev</button>
         <button onClick={() => goForward()}>Next</button>
